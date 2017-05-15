@@ -1,6 +1,6 @@
 library(xml2)
 library(RODBC)
-drv <- odbcConnect("SQL_R",uid = "ubuntu", pwd = "ubuntu")
+drv <- odbcConnect("ODBC設定名稱",uid = "帳號", pwd = "密碼")
 TargetTable<-"patentSymantec"
 
 patent = sqlQuery(drv, paste0(" select *   FROM [Farmdata].[dbo].[",TargetTable,"] where len(cpc)<10 "), stringsAsFactors = FALSE)
